@@ -1,19 +1,30 @@
-# Slim React Starter
+# React Query & React Table Sandbox
 
-CDN-based React development starter with Snowpack and Skypack, check out my [blog post](https://nafeu.medium.com/modern-react-development-but-without-200-mb-of-node-modules-69d8ca01eacf) on it.
+A set of examples with React Query and React Table
 
 ## Usage
 
 ```
-git clone https://github.com/nafeu/slim-react-starter.git
-cd slim-react-starter
+git clone https://github.com/nafeu/react-query-table-sandbox.git
+cd react-query-table-sandbox
 npm install
+npm start
 ```
+
+Access website at `localhost:8000`.
 
 ## Development
 
+### Server
+
 ```
-npm run dev
+npm run dev:server
+```
+
+### Client
+
+```
+npm run dev:client
 ```
 
 ## Build

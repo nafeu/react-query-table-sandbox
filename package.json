@@ -4,9 +4,12 @@
   "description": "React starter project with snowpack and skypack",
   "main": "index.js",
   "scripts": {
-    "dev": "snowpack dev",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:client": "snowpack dev",
+    "dev:server": "nodemon index.mjs",
     "build": "snowpack build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.mjs",
+    "prestart": "build"
   },
   "keywords": [
     "react",
@@ -17,6 +20,10 @@
   "author": "Nafeu Nasir (nafeu.com)",
   "license": "MIT",
   "devDependencies": {
-    "snowpack": "^3.0.11"
+    "nodemon": "^2.0.7",
+    "snowpack": "^3.0.13"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
