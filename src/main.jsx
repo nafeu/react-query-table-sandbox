@@ -1,5 +1,5 @@
-import React from 'https://cdn.skypack.dev/react';
-import ReactDOM from 'https://cdn.skypack.dev/react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import './index.css';
 
 import ReactQueryWithTable from './ReactQueryWithTable.jsx';
@@ -18,8 +18,8 @@ const Section = ({ title, desc, children }) => {
 
 const App = () => {
   return (
-    <div class="app">
-      <div class="app-container">
+    <div className="app">
+      <div className="app-container">
         <Section
           title={'React Query with React Table'}
           desc={'Using React Query with React Table'}

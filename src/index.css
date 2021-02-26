@@ -11,6 +11,23 @@ body {
   justify-content: center;
 }
 
+table {
+  border-spacing: 0;
+  border: 1px solid black;
+  border-bottom: 0px;
+}
+
+th, td {
+  margin: 0;
+  padding: 0.5rem;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+td:first-child, th:first-child {
+  border-left: 0px;
+}
+
 .app-container {
   width: 75%;
   margin: 5%;
@@ -38,5 +55,5 @@ body {
 .section-desc {
   font-size: 1.5em;
   font-weight: 100;
-  padding: 0.25em 0 0.25em 0;
+  padding: 0.5em 0 0.5em 0;
 }
