@@ -83,7 +83,7 @@ const TableQuery = () => {
   const {
     data: apiResponse,
     isLoading
-  } = useQuery('discussionGroupsStatic', fetchParentData, { enabled: !tableData });
+  } = useQuery('discussionGroups', fetchParentData, { enabled: !tableData });
 
   useEffect(() => {
     setTableData(apiResponse?.data);
