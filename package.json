@@ -9,7 +9,7 @@
     "dev:server": "nodemon index.mjs",
     "build": "snowpack build",
     "start": "node index.mjs",
-    "prestart": "build"
+    "prestart": "npm run build"
   },
   "keywords": [
     "react",

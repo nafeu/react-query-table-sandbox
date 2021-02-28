@@ -24,6 +24,7 @@ const STATUSES = ['open', 'resolved', 'locked']
 const ONE = 1;
 const TWO = 2;
 const THREE = 3;
+const FIVE = 5;
 const TWELVE = 12;
 const TEN = 10;
 const TWENTY = 20;
@@ -77,10 +78,10 @@ const updateData = data => {
   return output;
 }
 
-const generateRows = amount => {
+const generateRows = () => {
   const output = [];
 
-  for (const count of Array(randomInt(amount)).keys()) {
+  for (const count of Array(randomInt(FIVE)).keys()) {
     output.push(
       {
         id: getUniqueId(),
@@ -106,6 +107,6 @@ app.get('/api', (req, res, next) => {
 
 app.get('/api/child', (req, res, next) => {
   setTimeout(() => {
-    res.json(generateRows(THREE));
+    res.json(generateRows());
   }, ONE_SECOND);
 });

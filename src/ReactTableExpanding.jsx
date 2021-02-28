@@ -113,14 +113,16 @@ const TableInstance = ({ tableData, onClickRow, isRowLoading }) => {
             const toggleRowExpandedProps = row.getToggleRowExpandedProps();
 
             const onClick = async event => {
-              if (!isExpanded) {
-                await onClickRow(row);
+              if (!isLoading) {
+                if (!isExpanded) {
+                  await onClickRow(row);
+                }
+                toggleRowExpandedProps.onClick(event);
               }
-              toggleRowExpandedProps.onClick(event);
             }
 
             if (isLoading) {
-              return <span>...</span>
+              return <span>🔄</span>
             }
 
             return (
