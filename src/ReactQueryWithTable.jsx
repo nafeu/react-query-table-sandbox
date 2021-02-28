@@ -35,17 +35,20 @@ const TableInstance = ({ tableData }) => {
     () => {
       const columns = [
         {
-          Header: 'Discussion Groups',
-          columns: [
-            {
-              Header: 'Topic',
-              accessor: 'name'
-            },
-            {
-              Header: 'Active Members',
-              accessor: 'active'
-            }
-          ]
+          Header: 'Topic',
+          accessor: 'name'
+        },
+        {
+          Header: 'Active Members',
+          accessor: 'active'
+        },
+        {
+          Header: 'Status',
+          accessor: 'status'
+        },
+        {
+          Header: 'Upvotes',
+          accessor: 'upvotes'
         }
       ];
       return [columns, tableData];

@@ -9,22 +9,24 @@ const PROMPTS = [
 ]
 
 const TOPICS = [
-  'React Query & React Table', 'React Query',
-  'react-table global filters', 'react-table sorting',
-  'React Table',
+  'react-query', 'react-table', 'global filters',
+  'table sorting', 'expanding rows',
 ];
 
 const USES = [
-  'for a BI solution', 'for a stats aggregation platform',
-  'for my leaderboard', 'in a reporting dashboard',
-  'in my ecommerce app',
+  'for BI solution', 'for stats aggregation',
+  'for leaderboard', 'in reporting dashboard',
+  'in ecommerce app',
 ];
+
+const STATUSES = ['open', 'resolved', 'locked']
 
 const ONE = 1;
 const TWO = 2;
 const THREE = 3;
 const TWELVE = 12;
 const TEN = 10;
+const TWENTY = 20;
 const FIFTY = 50;
 const ONE_SECOND = 1000;
 
@@ -48,12 +50,14 @@ const randomInt = max => Math.floor(Math.random() * (Math.floor(max) - TWO)) + O
 const getInitialMockData = () => {
   const output = [];
 
-  for (const count of Array(randomInt(TEN)).keys()) {
+  for (const count of Array(TEN).keys()) {
     output.push(
       {
         id: getUniqueId(),
         name: `${randomItem(PROMPTS)} ${randomItem(TOPICS)} ${randomItem(USES)}`,
-        active: randomInt(FIFTY)
+        active: randomInt(FIFTY),
+        status: randomItem(STATUSES),
+        upvotes: randomInt(FIFTY)
       }
     )
   }
@@ -65,20 +69,9 @@ const updateData = data => {
   let output = [...data];
 
   for (const count of Array(randomInt(THREE)).keys()) {
-    const item = randomItem(output);
-    item.active = randomInt(FIFTY);
-
-    output.push(
-      {
-        id: getUniqueId(),
-        name: `${randomItem(PROMPTS)} ${randomItem(TOPICS)} ${randomItem(USES)}`,
-        active: randomInt(FIFTY)
-      }
-    );
-  }
-
-  if (output.length > TWELVE) {
-    output.shift();
+    randomItem(output).active = randomInt(FIFTY);
+    randomItem(output).status = randomItem(STATUSES);
+    randomItem(output).upvotes += randomInt(TEN);
   }
 
   return output;
