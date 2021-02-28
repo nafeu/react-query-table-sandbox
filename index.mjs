@@ -77,11 +77,35 @@ const updateData = data => {
   return output;
 }
 
+const generateRows = amount => {
+  const output = [];
+
+  for (const count of Array(randomInt(amount)).keys()) {
+    output.push(
+      {
+        id: getUniqueId(),
+        name: `${randomItem(PROMPTS)} ${randomItem(TOPICS)} ${randomItem(USES)}`,
+        active: randomInt(FIFTY),
+        status: randomItem(STATUSES),
+        upvotes: randomInt(FIFTY)
+      }
+    )
+  }
+
+  return output;
+}
+
 mockData = getInitialMockData();
 
 app.get('/api', (req, res, next) => {
   setTimeout(() => {
     mockData = updateData(mockData);
     res.json(mockData);
+  }, ONE_SECOND);
+});
+
+app.get('/api/child', (req, res, next) => {
+  setTimeout(() => {
+    res.json(generateRows(THREE));
   }, ONE_SECOND);
 });

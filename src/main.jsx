@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 import ReactQueryWithTable from './ReactQueryWithTable.jsx';
+import ReactTableExpanding from './ReactTableExpanding.jsx';
 
 const Section = ({ title, desc, children }) => {
   return (
@@ -25,6 +26,12 @@ const App = () => {
           desc={'Using React Query with React Table'}
         >
           <ReactQueryWithTable />
+        </Section>
+        <Section
+          title={'React Table with Expanded Rows'}
+          desc={'Using and API request to lazy-load expanded rows'}
+        >
+          <ReactTableExpanding />
         </Section>
       </div>
     </div>
